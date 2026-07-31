@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuecheng XU</title>
+    <title>Yuecheng XU (徐悦诚)</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Merriweather:wght@700&display=swap" rel="stylesheet">
@@ -11,23 +11,26 @@
 <body>
     <header>
         <div class="container header-container">
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark theme">&#9789;</button>
+            <button id="theme-toggle" class="theme-toggle">🌛</button>
             <div class="profile-info">
-                <h1>Yuecheng XU</h1>
-                <p class="subtitle"><b>Smart Energy &amp; Building Systems Researcher / Student</b></p>
-                <p><span class="icon">&#9993;</span> Email: <a href="mailto:sayyx7@nottingham.edu.cn">sayyx7@nottingham.edu.cn</a> | <a href="mailto:xuyuecheng365@hotmail.com">xuyuecheng365@hotmail.com</a></p>
+                <h1>Yuecheng XU <span class="chinese-name">(徐悦诚)</span></h1>
+                <p class="subtitle"><b>👨‍💻 Smart Energy & Building Systems Student / Researcher</b></p>
+                <p><span class="icon">📧</span> Personal Email: <a href="mailto:xuyuecheng365@hotmail.com">xuyuecheng365@hotmail.com</a></p>
+                <p><span class="icon">📧</span> University Email: <a href="mailto:sayyx7@nottingham.edu.cn">sayyx7@nottingham.edu.cn</a></p>
+                <p><span class="icon">📧</span> Working Email: <a href="mailto:york.xu@lxzn-tech.com">york.xu@lxzn-tech.com</a></p>
+                <p><span class="icon">💬</span> WeChat: yorksxu</p>
                 <div class="links">
-                    <a href="https://github.com/Yorking6" target="_blank" class="button">GitHub</a>
-                    <a href="files/Personal_CV.pdf" target="_blank" class="button">Resume</a>
+                    <a href="https://github.com/Yorking6" target="_blank" class="button">🐱 GitHub</a>
+                    <a href="files/Personal_CV.pdf" target="_blank" class="button">📄 Resume</a>
                 </div>
             </div>
             <div class="carousel-container">
                 <img src="images/photo1.jpg" class="carousel-image" alt="Photo 1">
                 <img src="images/photo2.jpg" class="carousel-image active" alt="Photo 2">
-                <img src="images/photo3.jpg" class="carousel-image" alt="Photo 3">
+                <img src="images/photo3.jpg" class="carousel-image" alt="Photo 3">                
                 <img src="images/photo4.jpg" class="carousel-image" alt="Photo 4">
-                <a class="prev" onclick="changeSlide(-1)" aria-label="Previous photo">&#10094;</a>
-                <a class="next" onclick="changeSlide(1)" aria-label="Next photo">&#10095;</a>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
             </div>
         </div>
     </header>
@@ -37,58 +40,346 @@
         function changeSlide(direction) {
             const slides = document.querySelectorAll('.carousel-image');
             slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            currentSlide += direction;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
             slides[currentSlide].classList.add('active');
         }
+
         document.getElementById('theme-toggle').addEventListener('click', () => {
             document.documentElement.classList.toggle('dark-theme');
             const isDark = document.documentElement.classList.contains('dark-theme');
-            document.getElementById('theme-toggle').innerHTML = isDark ? '&#9788;' : '&#9789;';
+            document.getElementById('theme-toggle').textContent = isDark ? '🌞' : '🌛';
         });
     </script>
 
     <section class="intro">
-        <div class="container">
-            <p>I am <strong>Yuecheng Xu</strong>, a Bachelor's candidate in Architectural Environment Engineering at the <a href="https://www.nottingham.edu.cn/" target="_blank">University of Nottingham Ningbo China</a> (September 2024 - July 2028). My work focuses on energy systems, dynamic modelling, and data-driven control.</p>
-            <p>Professionally, I am an <strong>Energy Management System Developer</strong> at Green Carbon Intelligence (Ningbo) Technology Development Co., Ltd. I work on deep-learning and digital-twin energy and carbon management systems, energy auditing, carbon accounting, and ESG consulting.</p>
-            <p>I am interested in smart sustainable cities, net-zero carbon fuels, and practical pathways to improve energy efficiency and reduce emissions.</p>
+    <div class="container">
+        <p>
+            I am <strong>Yuecheng Xu</strong>, a Bachelor's candidate in Architectural Environment Engineering at the <a href="https://www.nottingham.edu.cn/" target="_blank">University of Nottingham Ningbo China</a>, where I am currently ranked within the top tier of my program. I am fortunate to be mentored by <a href="https://research.nottingham.edu.cn/en/persons/zhiang-zhang/" target="_blank">Dr. Zhiang Zhang</a>, a leading researcher in AI-driven building energy optimization. Under his guidance, I have cultivated a rigorous research methodology, focusing on the intersection of physics-based dynamic modeling (<strong>Modelica</strong>) and advanced control algorithms (<strong>MPC</strong>).
+        </p>
+        <p>
+            Professionally, I serve as a Junior Energy Systems Developer at <a href="https://www.lxzn-tech.com/" target="_blank">LynxCore Technology</a>. In this dual role of researcher and engineer, I bridge the gap between algorithmic innovation and industrial application. I am dedicated to optimizing deep learning algorithms that power our SaaS platform, which has already delivered a <strong>22% annual carbon reduction</strong> for major manufacturing clients. This hands-on experience has honed my ability to translate <strong>GHG Protocol</strong> standards and <strong>ISO 14064</strong> requirements into actionable data-driven solutions.
+        </p>
+        <p>
+            My career aspiration is to be a pioneer in the smart energy sector—balancing the academic rigor of a researcher with the problem-solving agility of an engineer. I am particularly passionate about leveraging <strong>Digital Twin</strong> technology and <strong>Reinforcement Learning</strong> to create more sustainable and intelligent HVAC systems.
+        </p>
+    </div>
+</section>
+
+<main>
+    <div class="container">
+        <section>
+            <h2>🎓 Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="details">
+                        <h3>University of Nottingham Ningbo China (QS #97)</h3>
+                        <p>B.Eng. in Architectural Environment Engineering</p>
+                        <p class="date">09/2024 - 07/2028</p>
+                    </div>
+                    <div class="education-info">
+                        <p><strong>Supervisor:</strong> <a href="https://research.nottingham.edu.cn/en/persons/zhiang-zhang/" target="_blank">Dr. Zhiang Zhang</a></p>
+                        <p><strong>Ranking:</strong> Top 1%</p>
+                    </div>
+                </div>
+                <div class="education-introduction">
+                    <p><b>Research Focus</b>: Physics-based dynamic modeling (Modelica), advanced control algorithms (MPC), and AI-driven building energy optimization.</p>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="details">
+                        <h3>Tsinghua University - Technical University of Munich</h3>
+                        <p>Winter School Program in Smart Sustainable Cities and Energy</p>
+                        <p class="date">11/2025 - 12/2025</p>
+                    </div>
+                    <div class="education-info">
+                        <p><strong>Location:</strong> Beijing, China</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="details">
+                        <h3>Shanghai Jiao Tong University</h3>
+                        <p>Summer School Program in Net-Zero Carbon Fuels</p>
+                        <p class="date">06/2025 - 07/2025</p>
+                    </div>
+                    <div class="education-info">
+                        <p><strong>Location:</strong> Shanghai, China</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section>
+    <h2>🔬 Research & Work Experience</h2>
+
+    <div class="experience-item">
+        <div class="details-with-logo">
+            <h3>
+                <img src="images/green_carbon.png" alt="Green Carbon Intelligence" class="logo">
+                Energy Management System Developer at Green Carbon Intelligence
+            </h3>
+            <p>SaaS Platform powered by Deep Learning & Digital Twin</p>
+            <p class="date">09/2025 - Present</p>
         </div>
-    </section>
+        <div class="content">
+            <ul>
+                <li><strong>System Development & Algorithm Optimization:</strong> Deeply involved in the R&D of an energy and carbon management system powered by deep learning and digital twin technologies; optimized energy dispatching algorithm logic to enhance the SaaS platform's intelligent responsiveness across diverse scenarios. The system has been successfully deployed by over 10 large-scale manufacturing clients, driving an average annual carbon reduction of 22% and an energy efficiency improvement of 18%.</li>
+                <li><strong>Energy Auditing & ESG Consulting:</strong> Led or participated in 6 energy auditing and carbon emission accounting projects; conducted greenhouse gas (GHG) inventories based on the GHG Protocol and ISO 14064 standards; established energy consumption baselines and identified critical nodes for energy saving, providing core data support for clients' energy efficiency assessments and ESG disclosures.</li>
+                <li><strong>Industry Insights & Deep Research Reports:</strong> Continuously tracked macro policies, cutting-edge technologies (such as carbon capture and green power trading), and market competitive dynamics in the energy and carbon management sector; compiled 12 industry research reports to deliver strategic recommendations for product iteration and market expansion.</li>
+            </ul>
+        </div>
+    </div>
 
-    <main>
-        <div class="container">
+    <div class="experience-item">
+        <div class="details-with-logo">
+            <h3>
+                <img src="images/ccid.png" alt="CCID Consulting" class="logo">
+                New Energy Economics Consulting Specialist at CCID Consulting
+            </h3>
+            <p>State-Owned Enterprise under MIIT</p>
+            <p class="date">06/2025 - 09/2025</p>
+        </div>
+        <div class="content">
+            <ul>
+                <li><strong>Market Sizing & Industrial Research:</strong> Focused on the new energy and intelligent equipment sectors, leading the authorship of 12 market sizing and industrial thematic studies; utilized top-down analysis to quantitatively evaluate market spaces, supply chain value distribution, and industry growth drivers.</li>
+                <li><strong>In-Depth Research Report Writing:</strong> Contributed to the formulation of 8 mid-year industrial research reports; conducted comprehensive reviews of macro policy shifts, technological iteration paths, and corporate case studies to provide think-tank support for government decision-making.</li>
+                <li><strong>Database Construction & End-to-End Management:</strong> Managed the underlying maintenance of the energy and intelligent equipment database, collecting, cleaning, and validating over 20,000 data points; established data indexing standards through logical verification and dimensionality reduction.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <div class="details-with-logo">
+            <h3>
+                <img src="images/nottingham.png" alt="University of Nottingham Ningbo China" class="logo">
+                Research: AI-driven Optimization of Energy Systems
+            </h3>
+            <p>Focus: Physics-based Dynamic Modeling (Modelica) & Advanced Control Algorithms (MPC)</p>
+            <p>Advisor: <a href="https://research.nottingham.edu.cn/en/persons/zhiang-zhang/" target="_blank">Dr. Zhiang Zhang</a></p>
+            <p class="date">07/2025 - Present</p>
+        </div>
+        <div class="content">
+            <ul>
+                <li><strong>Dynamic System Modeling:</strong> Developed and calibrated a comprehensive, high-fidelity dynamic model of a complex district thermal energy system to accurately simulate transient behavior and predict future states.</li>
+                <li><strong>Advanced Control Implementation:</strong> Designed and deployed a data-driven optimization framework leveraging Model Predictive Control (MPC) and Machine Learning (ML) predictors for optimal energy management.</li>
+                <li><strong>Efficiency Enhancement:</strong> Successfully executed dynamic optimization strategies to minimize operational costs and maximize energy efficiency, demonstrating an improvement of 15% in system performance.</li>
+                <li><strong>Research Output:</strong> Authored a peer-reviewed quality manuscript detailing the novel methodology and empirical results.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <div class="details-with-logo">
+            <h3>
+                <img src="images/nottingham.png" alt="University of Nottingham Ningbo China" class="logo">
+                Research: Model-based Optimal Control of Industrial Energy Systems
+            </h3>
+            <p><strong>Focus:</strong> Data-driven and Physics-based Modelling of Integrated Energy Systems</p>
+            <p class="date">03/2025 - 06/2025</p>
+        </div>
+        <div class="content">
+            <ul>
+                <li>Conducted an extensive literature review on data-driven and physics-based modelling of integrated energy systems, with a focus on energy-efficient control frameworks and related methodologies.</li>
+                <li>Assisted with industrial data mining, energy system modeling using Modelica, and applied Python for data analysis, dynamic modelling, and forecasting to support control optimization strategies.</li>
+                <li>Completed a review paper on the development of dynamic carbon emission factors and generated data mining insights on the relationship between renewable energy system capacity thresholds and environmental variables.</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
             <section>
-                <h2>Education</h2>
-                <div class="education-item"><div class="education-header"><div class="details"><h3>University of Nottingham Ningbo China (QS #97)</h3><p>Bachelor of Engineering in Architectural Environment Engineering</p><p class="date">09/2024 - 07/2028</p></div><div class="education-info"><p> Ningbo, China</p></div></div></div>
-                <div class="education-item"><div class="education-header"><div class="details"><h3>Tsinghua University - Technical University of Munich</h3><p>Winter School Program in Smart Sustainable Cities and Energy</p><p class="date">11/2025 - 12/2025</p></div><div class="education-info"><p>Beijing, China</p></div></div></div>
-                <div class="education-item"><div class="education-header"><div class="details"><h3>Shanghai Jiao Tong University</h3><p>Summer School Program in Net-Zero Carbon Fuels</p><p class="date">06/2025 - 07/2025</p></div><div class="education-info"><p>Shanghai, China</p></div></div></div>
+                <h2>💻 Projects (Selected by Learning Path)</h2>
+                <div class="project-item">
+                    <div class="details">
+                        <h3>Fine-Tuning of Multimodal Medical Large Models Integrating RAG Mechanisms</h3>
+                        <p>Undergraduate Thesis</p>
+                        <p class="date">05/2025</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Designed and implemented a medical content generation system combining Retrieval-Augmented Generation (RAG) and Multimodal Large Language Model (MLLM) fine-tuning.</li>
+                            <li>Developed a multimodal RAG framework supporting joint image-text input, featuring multiple retrieval paradigms such as joint embedding, label-guided retrieval, and image-text pair binding.</li>
+                            <li>Fine-tuned the Qwen2.5-VL model in two stages using Chinese medical QA and image-text datasets, yielding the Qwen2.5-VL-Med model with domain-specific reasoning capabilities.</li>
+                            <li>Built a modular web-based interactive system supporting local/cloud API deployment, multimodal input, streaming response, and history tracking.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="details">
+                        <h3>Cross-Modal Pretrained Model Alignment</h3>
+                        <p><a href="https://github.com/liaoyanqing666/Pretrained_Model_Alignment">Project Website</a></p>
+                        <p class="date">07/2024</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Proposed and implemented a method to quickly align pre-trained models from different modalities.</li>
+                            <li>Designed a Siamese neural network similarity module to align pretrained models with varying embedding dimensions.</li>
+                            <li>Achieved rapid model alignment between text and image modalities with minimal training on a standard image classification dataset, bypassing the need for large "image-description" datasets (e.g., CLIP).</li>
+                            <li>Experimentally demonstrated the project's ability to align quickly with minimal GPU requirements while maintaining satisfactory performance.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="details">
+                        <h3>Reproduction and Experimentation of TextCNN</h3>
+                        <p><a href="https://github.com/liaoyanqing666/TextCNN-Chinese-text-data-mining-">Project Website</a></p>
+                        <p class="date">03/2023</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Reproduced and experimented with the TextCNN model.</li>
+                            <li>Performed tokenization and encoding of sentence content, followed by padding or truncating sentence lengths.</li>
+                            <li>Implemented word embedding and utilized multiple convolutional kernels of varying sizes for feature extraction, pooling, and final classification through fully connected layers.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="details">
+                        <h3>CNN-LSTM Based Video Classification</h3>
+                        <p><a href="https://github.com/liaoyanqing666/CNN_LSTM_video_classification">Project Website</a></p>
+                        <p class="date">02/2023</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Developed a network model based on CNN for video frame feature extraction and LSTM for sequential frame feature computation.</li>
+                            <li>Compared the classification performance of KNN and ANN after freezing the feature extraction model parameters.</li>
+                            <li>Achieved 92% accuracy on a public dataset, comparable to results from another study using a non-public dataset.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="details">
+                        <h3>Handwriting Recognition System Based on Siamese Neural Networks</h3>
+                        <p><a href="https://github.com/liaoyanqing666/siamese_neural_network_OfHSV">Project Website</a></p>
+                        <p class="date">11/2022</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Independently designed and coded a system utilizing VGG16 for signature feature extraction.</li>
+                            <li>Achieved 100% accuracy on the CEDAR dataset using Siamese neural networks for classification.</li>
+                            <li>Developed frontend-backend interaction logic enabling the utilization of training results on web platforms.</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
             <section>
-                <h2>Research &amp; Work Experience</h2>
-                <div class="experience-item"><div class="details-with-logo"><h3><img src="images/green_carbon.png" alt="Green Carbon Intelligence" class="logo"> Energy Management System Developer</h3><p>Green Carbon Intelligence (Ningbo) Technology Development Co., Ltd.</p><p class="date">09/2025 - Present</p></div><div class="content"><ul><li><strong>System Development &amp; Algorithm Optimization:</strong> R&amp;D of a deep-learning and digital-twin energy and carbon management system; optimized energy dispatching logic for a SaaS platform deployed by over 10 manufacturing clients, driving average annual carbon reduction of 22% and energy-efficiency improvement of 18%.</li><li><strong>Energy Auditing &amp; ESG Consulting:</strong> Led or participated in 6 energy auditing and carbon accounting projects using GHG Protocol and ISO 14064 standards, supporting energy assessments and ESG disclosures.</li><li><strong>Industry Research:</strong> Co-authored 12 reports covering policy, carbon capture, green power trading, supply chains, and competitors, informing product iteration and market expansion.</li></ul></div></div>
-                <div class="experience-item"><div class="details-with-logo"><h3><img src="images/ccid.png" alt="CCID Consulting" class="logo"> New Energy Economics Consulting Specialist</h3><p>CCID Consulting Co., Ltd. (State-Owned Enterprise under MIIT)</p><p class="date">06/2025 - 09/2025</p></div><div class="content"><ul><li><strong>Market Sizing &amp; Industrial Research:</strong> Led 12 market sizing and industrial studies in new energy and intelligent equipment using top-down analysis.</li><li><strong>Research Reports:</strong> Contributed to 8 mid-year reports on policy, technology, corporate cases, industry lifecycles, and trends.</li><li><strong>Database Management:</strong> Collected, cleaned, and validated over 20,000 data points and established indexing standards for efficient retrieval and charting.</li></ul></div></div>
-                <div class="experience-item"><div class="details-with-logo"><h3>Consulting Assistant</h3><p>Ningbo Zhenguo Bookstore Co., Ltd.</p><p class="date">02/2025 - 06/2025</p></div><div class="content"><ul><li><strong>Business Process Mapping &amp; Tool Development:</strong> Used Visio to identify bottlenecks and developed an automated Excel template library and a lightweight knowledge graph.</li><li><strong>Knowledge System Construction:</strong> Built and maintained a standardized FAQ knowledge base by integrating industry information, user pain points, and operating scenarios.</li></ul></div></div>
+                <h2>🏆 Awards</h2>
+                <ul class="awards-list">
+                    <li><a href="https://icpc.global/" target="_blank">ICPC (International Collegiate Programming Contest) Asia Regional Contest (Hefei)</a> Bronze Medal 🥉 <span class="date">11/2023</span></li>
+                    <li><a href="https://icpc.global/" target="_blank">ICPC (International Collegiate Programming Contest) Asia Regional Contest (Nanjing)</a> Bronze Medal 🥉 <span class="date">11/2022</span></li>
+                    <li><a href="http://www.asc-events.org/" target="_blank">ASC Student Supercomputer Challenge</a> National Second Prize 🥈 <span class="date">02/2024</span></li>
+                    <li><a href="https://dasai.lanqiao.cn/" target="_blank">Lanqiao Cup C/C++ Programming Contest (National)</a> Third Prize 🥉 <span class="date">06/2023</span></li>
+                    <li><a href="https://dasai.lanqiao.cn/" target="_blank">Lanqiao Cup C/C++ Programming Contest (Shanghai Division)</a> First Prize 🥇 <span class="date">04/2023</span></li>
+                    <li><a href="https://ccpc.io/" target="_blank">CCPC (China Collegiate Programming Contest) Shanghai Programming Contest</a> Silver Medal 🥈 <span class="date">10/2022</span></li>
+                </ul>
             </section>
 
             <section>
-                <h2>Projects</h2>
-                <div class="project-item"><div class="details"><h3>AI-driven Optimization of Energy Systems</h3><p class="date">07/2025 - Present</p></div><div class="content"><ul><li>Developed and calibrated a high-fidelity dynamic model of a district thermal energy system.</li><li>Designed a data-driven optimization framework using Model Predictive Control (MPC) and Machine Learning predictors.</li><li>Reduced operating costs and improved system performance by 15%; authored a peer-reviewed quality manuscript.</li></ul></div></div>
-                <div class="project-item"><div class="details"><h3>Model-based Optimal Control of Industrial Energy Systems</h3><p class="date">03/2025 - 06/2025</p></div><div class="content"><ul><li>Reviewed data-driven and physics-based modelling methods for integrated energy systems and assisted with industrial data mining and Modelica modelling.</li><li>Processed carbon emission factors and built time-series datasets with Python for analysis, forecasting, and control optimization.</li><li>Completed a review paper on dynamic carbon emission factors and analyzed renewable-energy capacity thresholds.</li></ul></div></div>
+                <h2>📚 Papers</h2>
+                <div class="papers-item">
+                    <div class="details">
+                        <h3>The Rise of Autonomous AI Agents: A Comprehensive Survey of OpenClaw - Architecture, Security, Ecosystem, and Beyond</h3>
+                        <p><a href="https://www.researchgate.net/publication/404248344_The_Rise_of_Autonomous_AI_Agents_A_Comprehensive_Survey_of_OpenClaw_-_Architecture_Security_Ecosystem_and_Beyond">Paper Link</a> ResearchGate Preprint. DOI: 10.13140/RG.2.2.35940.13443.</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Authors: Siyuan Li, Peng Shu, Churan Yu, Peilong Wang, Ruidong Zhang, Bowen Guo, Xinliang Li, Ruiyu Yan, Arif Hassan Zidan, Yi Pan, Wei Ruan, Lifeng Chen, Junhao Chen, Zhaojun Ding, Yiwei Li, Zhengliang Liu, Haixing Dai, Lin Zhao, Yu Bao, Xiang Li, Wei Zhang, Tianming Liu.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="papers-item">
+                    <div class="details">
+                        <h3>The Study of Human Preference Based on Integrated Analysis of N1 and LPP Components</h3>
+                        <p><a href="https://arxiv.org/abs/2505.19879">Paper Link</a> arXiv Preprint. arXiv:2505.19879.</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Authors: Siyuan Li, Xiangze Meng, Yijian Yang, Yiwen Xu, Yunfei Wang, Chenghu Qiu, Hanyi Jiang, Pin Wu, Shengbo Chen, Xiao Wei, Hao Wang, Lan Ni, Huiran Zhang.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="papers-item">
+                    <div class="details">
+                        <h3>Research advances in offline handwritten signature verification</h3>
+                        <p><a href="https://www.ewadirect.com/proceedings/ace/article/view/4365">Paper Link</a> Applied and Computational Engineering, 6(1), 1244-1252. DOI: 10.54254/2755-2721/6/20230653.</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Co-authors: Yuhang Guo, Siyuan Li (Co-first author), Jinxuan Wu</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
             <section>
-                <h2>Scholarship &amp; Award</h2>
-                <ul class="awards-list"><li><strong>Provost Academic Scholarship (Second Level)</strong> - University of Nottingham Ningbo China <span class="date">AY 2024 - 2025 (Dec. 2025)</span></li></ul>
+                <h2>🛠️ Skills</h2>
+                <ul class="skills-list">
+                    <li><strong>Programming Languages:</strong> Python (Advanced), C++ (Proficient), HTML (Proficient), MATLAB (Familiar), CSS (Familiar), JavaScript (Familiar)</li>
+                    <li><strong>Tools:</strong> Git/Github, Microsoft Word, LaTeX (Overleaf), Markdown, VS Code Remote SSH</li>
+                    <li><strong>AI-related Skills:</strong> PyTorch, Transformers, vLLM, AI Agents, LLMs</li>
+                </ul>
             </section>
 
             <section>
-                <h2>Technical Skills</h2>
-                <ul class="skills-list"><li><strong>Programming &amp; Tools:</strong> Python, MATLAB, MySQL, C++, HTML/CSS, Git, VS Code, PyCharm</li><li><strong>AI &amp; Data Analysis:</strong> Machine Learning, Reinforcement Learning, Large Language Models, Model Predictive Control, pandas, NumPy, Matplotlib, Data Visualization, Statistical Analysis</li><li><strong>Energy Simulation &amp; CAD:</strong> Modelica, EnergyPlus, SIMIENS, HAP-Carrier, AutoCAD, Revit, Visio</li><li><strong>Engineering &amp; Standards:</strong> Building Environment, Thermal System Modeling, GHG Protocol, ISO 14064, ESG Reporting, Carbon Accounting, Energy Auditing</li></ul>
+                <h2>🤝 Extracurricular & Volunteer Activities</h2>
+                <div class="activity-item">
+                    <div class="details">
+                        <h3>New Media Center, School of Computer Engineering and Science</h3>
+                        <p>Chairman</p>
+                        <p class="date">01/2022 - 01/2023</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Managed content publication on the School's official WeChat account and coordinated daily operations.</li>
+                            <li>Organized and managed recruitment presentations, student representative meetings, and other related affairs.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="details">
+                        <h3>ByteDance</h3>
+                        <p>Campus Ambassador</p>
+                        <p class="date">03/2022 - 06/2022</p>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>Assisted in promoting spring recruitment and summer internships.</li>
+                            <li>Distributed promotional materials and internal referral codes.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <b>Volunteer Hours: 100h+ ⏳</b>
+                </div>
             </section>
         </div>
     </main>
 
-    <footer><div class="container"><p>&copy; 2026 Yuecheng XU. All rights reserved.</p></div></footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Siyuan Li. All rights reserved. Original content available in the <a href="https://github.com/liaoyanqing666/liaoyanqing666.github.io" target="_blank">website repository</a>.</p>
+            <p>Check out a game I wrote: <a href="game.html">Click the Ball Game 🎮</a>.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="track-visitors.js"></script>
 </body>
 </html>
